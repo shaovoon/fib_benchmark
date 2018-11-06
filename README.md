@@ -6,25 +6,25 @@ Source code of recursive and iterative Fibonacci methods are listed below. They 
 ```Cpp
 int recursive_fib(int n)
 {
-	if (n < 2)
-	{
-		return n;
-	}
-	else
-	{
-		return recursive_fib(n - 2) + recursive_fib(n - 1);
-	}
+    if (n < 2)
+    {
+        return n;
+    }
+    else
+    {
+        return recursive_fib(n - 2) + recursive_fib(n - 1);
+    }
 }
 int iterative_fib(int n)
 {
-	int second_fib = 0, first_fib = 1, current_fib = 0; 
-	for(int i=2; i<=n; i++)
-	{    
-		current_fib = second_fib+first_fib;    
-		second_fib = first_fib;    
-		first_fib = current_fib;  
-	}  
-	return current_fib; 
+    int second_fib = 0, first_fib = 1, current_fib = 0; 
+    for(int i=2; i<=n; i++)
+    {    
+        current_fib = second_fib+first_fib;    
+        second_fib = first_fib;    
+        first_fib = current_fib;  
+    }  
+    return current_fib; 
 }
 ```
 
@@ -44,19 +44,19 @@ iterative_fib timing:00.000
 
 C# timing is just slightly behind C++. We will add a global variable named count to keep track of how many times the recursive method is called for fibonacci of 8.
 
-```
+```Cpp
 int count = 0;
 int recursive_fib_with_count(int n)
 {
-	++count;
-	if (n < 2)
-	{
-		return n;
-	}
-	else
-	{
-		return recursive_fib_with_count(n - 2) + recursive_fib_with_count(n - 1);
-	}
+    ++count;
+    if (n < 2)
+    {
+        return n;
+    }
+    else
+    {
+        return recursive_fib_with_count(n - 2) + recursive_fib_with_count(n - 1);
+    }
 }
 ```
 
