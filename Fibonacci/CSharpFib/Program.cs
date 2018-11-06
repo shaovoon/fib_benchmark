@@ -44,6 +44,10 @@ namespace CSharpFib
             Console.WriteLine("recursive_fib(42) result:{0}",  recursive_fib(42));
             stopwatch.stop();
 
+            stopwatch.start("tail_recursion_fib");
+            Console.WriteLine("tail_recursion_fib(42) result:{0}", tail_recursion_fib(42));
+            stopwatch.stop();
+            
             stopwatch.start("iterative_fib");
             Console.WriteLine("iterative_fib(42) result:{0}", iterative_fib(42));
             stopwatch.stop();
@@ -87,6 +91,15 @@ namespace CSharpFib
                 first_fib = current_fib;
             }
             return current_fib;
+        }
+        
+        static int tail_recursion_fib(int n, int a = 0, int b = 1)
+        {
+            if (n == 0)
+                return a;
+            if (n == 1)
+                return b;
+            return tail_recursion_fib(n - 1, b, a + b);
         }
 
     }
