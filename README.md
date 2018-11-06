@@ -1,4 +1,4 @@
-# fib_benchmark
+# Fibonacci Benchmark
 Benchmark of recursive and iterative Fibonacci number generation
 
 Source code of recursive and iterative Fibonacci methods are listed below. They are the same for both C++ and C#.
