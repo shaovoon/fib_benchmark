@@ -3,7 +3,7 @@ Benchmark of recursive and iterative Fibonacci number generation
 
 Fibonacci Sequence is defined as _A series of numbers in which each number ( Fibonacci number ) is the sum of the two preceding numbers. The simplest is the series 1, 1, 2, 3, 5, 8, etc._
 
-Source code of recursive and iterative Fibonacci methods are listed below. They are the same for both C++ and C#.
+Source code of recursive, iterative and tail recursive Fibonacci methods are listed below. They are the same for both C++ and C#. Tail recursive version is contributed by Peter Becker.
 
 ```Cpp
 int recursive_fib(int n)
@@ -17,6 +17,7 @@ int recursive_fib(int n)
         return recursive_fib(n - 2) + recursive_fib(n - 1);
     }
 }
+
 int iterative_fib(int n)
 {
     int second_fib = 0, first_fib = 1, current_fib = 0; 
@@ -28,6 +29,15 @@ int iterative_fib(int n)
     }  
     return current_fib; 
 }
+
+int tail_recursion_fib(int n, int a = 0, int b = 1)
+{
+	if (n == 0)
+		return a;
+	if (n == 1)
+		return b;
+	return tail_recursion_fib(n - 1, b, a + b);
+}
 ```
 
 ### C++ Benchmark result for finding fibonacci of 42
@@ -35,6 +45,7 @@ int iterative_fib(int n)
 ```
 recursive_fib timing: 1051ms
 iterative_fib timing:    0ms
+tail_recursion_fib timing:    0ms
 ```
 
 ### C# Benchmark result for finding fibonacci of 42
@@ -42,6 +53,7 @@ iterative_fib timing:    0ms
 ```
 recursive_fib timing:01.179
 iterative_fib timing:00.000
+tail_recursion_fib timing:00.000
 ```
 
 C# timing is just slightly behind C++. We will add a global variable named count to keep track of how many times the recursive method is called for fibonacci of 8.
