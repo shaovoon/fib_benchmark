@@ -32,11 +32,11 @@ int iterative_fib(int n)
 
 int tail_recursion_fib(int n, int a = 0, int b = 1)
 {
-	if (n == 0)
-		return a;
-	if (n == 1)
-		return b;
-	return tail_recursion_fib(n - 1, b, a + b);
+    if (n == 0)
+        return a;
+    if (n == 1)
+        return b;
+    return tail_recursion_fib(n - 1, b, a + b);
 }
 ```
 
