@@ -1,6 +1,8 @@
 # Fibonacci Benchmark
 Benchmark of recursive and iterative Fibonacci number generation
 
+ibonacci Sequence is defined as _A series of numbers in which each number ( Fibonacci number ) is the sum of the two preceding numbers. The simplest is the series 1, 1, 2, 3, 5, 8, etc._
+
 Source code of recursive and iterative Fibonacci methods are listed below. They are the same for both C++ and C#.
 
 ```Cpp
