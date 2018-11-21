@@ -83,6 +83,9 @@ namespace CSharpFib
 
         static int iterative_fib(int n)
         {
+            if (n < 2)
+                return n;
+
             int second_fib = 0, first_fib = 1, current_fib = 0;
             for (int i = 2; i <= n; i++)
             {
